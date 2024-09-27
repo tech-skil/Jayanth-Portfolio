@@ -41,7 +41,7 @@ const Welcome = () => {
 
         <div className="absolute w-full h-full flex items-center justify-center p-4">
           <div className="relative w-full space-y-8 flex-col max-w-md aspect-square rounded-full flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-lg border-2 border-white/20 animate-colorChange  shadow-[0_0_10px_rgba(255,255,255,1)]  border-pink-100 ">
-            <h1 className="text-center kalam-bold font-black w-1/2 text-purple-100 text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
+            <h1 className="text-center kalam-bold font-black sm:w-1/2 text-purple-100 text-4xl sm:text-4xl md:text-5xl lg:text-6xl">
               Welcome to my portfolio
             </h1>
             <button className="relative cursor-pointer inline-flex pacifico-regular items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
