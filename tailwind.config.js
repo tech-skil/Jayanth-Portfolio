@@ -18,11 +18,13 @@ export default {
           '89%': { backgroundColor: 'rgba(75, 0, 130, 0.4)' }      // Indigo (Dark violet)
 
         },
+        
       },
       animation: {
         colorChange: 'colorChange 7s infinite', 
       },
     },
+    
   },
   plugins: [],
 }

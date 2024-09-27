@@ -40,13 +40,12 @@ const Welcome = () => {
         )}
 
         <div className="absolute w-full h-full flex items-center justify-center p-4">
-          <div className="relative w-full space-y-8 flex-col max-w-lg aspect-square rounded-full flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-lg border-2 border-white/20 animate-colorChange  shadow-[0_0_10px_rgba(255,255,255,1)]  border-pink-100 ">
+          <div className="relative w-full space-y-8 flex-col max-w-md aspect-square rounded-full flex items-center justify-center bg-white bg-opacity-10 backdrop-blur-lg border-2 border-white/20 animate-colorChange  shadow-[0_0_10px_rgba(255,255,255,1)]  border-pink-100 ">
             <h1 className="text-center kalam-bold font-black w-1/2 text-purple-100 text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
               Welcome to my portfolio
             </h1>
-
-            <button class="relative inline-flex pacifico-regular items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
-              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-800 rounded-md group-hover:bg-opacity-0 sm:text-2xl md:text-3xl lg:text-4xl">
+            <button className="relative cursor-pointer inline-flex pacifico-regular items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+              <span className="relative  px-3 py-1 transition-all ease-in duration-75 bg-white dark:bg-gray-800 rounded-md group-hover:bg-opacity-0 sm:text-xl md:text-2xl lg:text-3xl">
               <Link to="home">View</Link>
               </span>
             </button>
