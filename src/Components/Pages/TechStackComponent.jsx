@@ -19,7 +19,7 @@ const TechStackComponent = () => {
   const [hoveredTech, setHoveredTech] = useState(null);
 
   return (
-    <div className="w-full p-8 sm:p-8 md:p-14 lg:p-24 xl:p-24 overflow-hidden">
+    <div className="w-full p-8 sm:p-8 md:p-14 m-0 lg:p-24 xl:p-24 overflow-hidden container mx-auto">
       <h2 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-purple-700 mb-2 sm:mb-4">Tech Stack</h2>
       <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg xl:text-xl">An overview of the technologies and platforms I excel in</p>
       <Marquee

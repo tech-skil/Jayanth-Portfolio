@@ -3,6 +3,7 @@ import Navbar from './Pages/Navbar'
 import Introduction from './Pages/Introduction'
 import Footer from './Pages/Footer'
 import TechStackComponent from './Pages/TechStackComponent'
+import ProjectShowcase from './Pages/ProjectShowcase'
 import CustomLineedCursor from './cuesorAnimation/MultiLlineRibbonsCursor';
 
 
@@ -22,6 +23,7 @@ const Home = () => {
       <Navbar/>
       <Introduction/>
       <TechStackComponent/>
+      <ProjectShowcase/>
       <Footer/>
     </div>
   )

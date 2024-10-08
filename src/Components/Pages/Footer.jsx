@@ -3,7 +3,7 @@ import waveSvg from '../../assets/images/wave1.svg';
 
 const Footer = () => {
   return (
-    <div className="footer sm:drop-shadow-lg flex justify-center h-full w-full">
+    <div className="footer container mx-auto sm:drop-shadow-lg flex justify-center h-full w-full">
 
     <footer className="mb-0 lg:max-w-[110rem] 2xl:max-w-[170rem] xl:max-w-[100rem]  w-full">
       <img
