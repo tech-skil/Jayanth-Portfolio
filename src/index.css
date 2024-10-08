@@ -51,3 +51,8 @@
     transform: translateX(-10px);
   }
 }
+
+
+.glow-effect {
+  filter: drop-shadow(0 0 8px rgba(42, 226, 246, 0.8));
+}
