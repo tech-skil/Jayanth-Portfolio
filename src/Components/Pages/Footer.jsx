@@ -10,17 +10,17 @@ const Footer = () => {
         <img
           src={waveSvg}
           alt="wave"
-          className="top-[-10rem] w-full h-auto"
+          className="w-full lg:-mb-40 md:-mb-20 -mb-10 -z-10 h-auto"
           style={{ zIndex: 1 }}
         />
         
-        <div className="h-24 sm:h-32 md:h-40 lg:h-28 bg-gradient-to-r from-[#9900EF] to-[#90d4ff]">
-          <div className="container mx-auto px-4 py-8 flex justify-center items-center text-white absolute bottom-36">
-            <h1 className="text-4xl font-bold mb-8">Let's build from here!</h1>
-            <div className="grid grid-cols-3 gap-4 justify-center items-center">
+        <div className="relative z-20 h-auto py-12 bg-gradient-to-r from-[#9900EF] to-[#90d4ff]">
+          <div className="container mx-auto px-4 text-white">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">Let's build from here!</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <div>
-                <h2 className="font-bold mb-2">Projects</h2>
-                <ul className="text-sm">
+                <h2 className="font-bold text-xl mb-4">Projects</h2>
+                <ul className="space-y-2">
                   <li>Tsukiwa</li>
                   <li>Realpop</li>
                   <li>Student Portal App</li>
@@ -31,8 +31,8 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="font-bold mb-2">Connect</h2>
-                <ul className="text-sm">
+                <h2 className="font-bold text-xl mb-4">Connect</h2>
+                <ul className="space-y-2">
                   <li>AniList</li>
                   <li>Facebook</li>
                   <li>Instagram</li>
@@ -43,8 +43,8 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="font-bold mb-2">Navigate</h2>
-                <ul className="text-sm">
+                <h2 className="font-bold text-xl mb-4">Navigate</h2>
+                <ul className="space-y-2">
                   <li>Home</li>
                   <li>About</li>
                   <li>Projects</li>
@@ -56,20 +56,18 @@ const Footer = () => {
           </div>
         </div>
         <div
-          className="relative bg-purple-950 p-4 text-white text-center"
+          className="relative bg-purple-950 py-6 px-4 text-white text-center"
           style={{ zIndex: 2 }}
         >
-          <p>&copy; {currentYear} Moonbami. Philippines.</p>
-          <div className="flex justify-center space-x-4 mt-2">
+          <p className="text-sm">&copy; {currentYear} Jayanth Banglore.</p>
+          {/* <div className="flex justify-center space-x-4 mt-4">
             {['facebook', 'instagram', 'github', 'twitter', 'reddit', 'youtube'].map((social) => (
               <a key={social} href={`#${social}`} className="hover:opacity-75">
                 <span className="sr-only">{social}</span>
-                {/* Replace with actual social media icons */}
                 <div className="w-6 h-6 bg-white rounded-full"></div>
               </a>
             ))}
-          </div>
-          <p className="mt-2">v2.6.0</p>
+          </div> */}
         </div>
       </footer>
     </div>

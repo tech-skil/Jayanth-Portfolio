@@ -8,6 +8,7 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import BackgroundAnimation from "../Animation/BackgroundAnimation";
 
 
 const Introduction = () => {
@@ -26,7 +27,8 @@ const Introduction = () => {
             <div
         className=" container mx-auto flex flex-col-reverse sm:flex-row sm:flex  sm:justify-evenly sm:drop-shadow-lg   transition duration-300 transform translate-y-full"
         ref={dissectionRef}
-      >
+        >
+        <BackgroundAnimation />
         <div className=" text-stone-950  space-y-4 sm:space-y-1 md:space-5-1 lg:space-y-4  lg:mt-0 lg:p-24  p-8  sm:mt-5 md:mt-10  w-full  md:w-max md:pl-14  pr-8 font-sans  ">
           <p className="  text-3xl  font-bold text-wrap:wrap; / sm:text-lg lg:text-xl xl:text-2xl">
             Hello It's me{" "}

@@ -1,0 +1,89 @@
+
+.circle-1 {
+  @apply left-[25%] w-20 h-20;
+  background: linear-gradient(45deg, rgba(110, 0, 255, 0.2), rgba(234, 0, 255, 0.2));
+  animation-delay: 0s;
+  opacity: 0.25;
+}
+
+
+.circle-2 {
+  @apply left-[10%] w-5 h-5;
+  background: rgba(0, 174, 255, 0.2);
+  animation-delay: 2s;
+  animation-duration: 12s;
+  opacity: 0.2;
+}
+
+.circle-3 {
+  @apply left-[70%] w-5 h-5;
+  background: rgba(234, 0, 255, 0.2);
+  animation-delay: 4s;
+  opacity: 0.3;
+}
+
+.circle-4 {
+  @apply left-[40%] w-16 h-16;
+  background: rgba(110, 0, 255, 0.2);
+  animation-delay: 0s;
+  animation-duration: 18s;
+  opacity: 0.2;
+}
+
+.circle-5 {
+  @apply left-[65%] w-5 h-5;
+  background: rgba(0, 174, 255, 0.2);
+  animation-delay: 0s;
+  opacity: 0.25;
+}
+
+.circle-6 {
+  @apply left-[75%] w-28 h-28;
+  background: rgba(234, 0, 255, 0.2);
+  animation-delay: 3s;
+  opacity: 0.2;
+}
+
+.circle-7 {
+  @apply left-[35%] w-36 h-36;
+  background: linear-gradient(45deg, rgba(110, 0, 255, 0.2), rgba(234, 0, 255, 0.2));
+  animation-delay: 7s;
+  opacity: 0.2;
+}
+
+.circle-8 {
+  @apply left-[50%] w-6 h-6;
+  background: rgba(0, 174, 255, 0.2);
+  animation-delay: 15s;
+  animation-duration: 45s;
+  opacity: 0.2;
+}
+
+.circle-9 {
+  @apply left-[20%] w-4 h-4;
+  background: rgba(169, 21, 233, 0.2);
+  animation-delay: 2s;
+  animation-duration: 35s;
+  opacity: 0.2;
+}
+
+.circle-10 {
+  @apply left-[85%] w-36 h-36;
+  background: linear-gradient(45deg, rgba(110, 0, 255, 0.2), rgba(234, 0, 255, 0.2));
+  animation-delay: 0s;
+  animation-duration: 11s;
+  opacity: 0.15;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
