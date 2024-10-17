@@ -6,10 +6,10 @@ import Laptop from '../../assets/images/ShocaseProjects/Laptop.png';
 const ProjectCard = ({ project, onExpand }) => {
   return (
 <div 
-  className={`bg-white rounded-lg hover:border-4 hover:rounded-lg hover:border-gradient-7  shadow-md overflow-hidden transition-all duration-300 transform hover:scale-105 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] mb-8 relative 
+  className={`bg-white rounded-lg hover:border-[16%] hover:border-gradient-7 hover:rounded-md shadow-md overflow-hidden transition-all duration-300 transform hover:scale-105 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] mb-8 relative 
     [background:conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,theme(colors.indigo.500)_86%,theme(colors.indigo.300)_90%,theme(colors.indigo.500)_94%,theme(colors.slate.600/.48))_border-box] border border-transparent animate-border`}
   style={{
-    padding: 'px', 
+    padding: '5px', 
     backgroundClip: 'padding-box',
   }}
 >
