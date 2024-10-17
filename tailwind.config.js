@@ -8,6 +8,16 @@ export default {
   theme: {
     extend: {
       keyframes: {
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
         animate: {
           '0%': { transform: 'translateY(0) rotate(0deg)', opacity: '1', borderRadius: '0' },
           '100%': { transform: 'translateY(-1000px) rotate(720deg)', opacity: '0', borderRadius: '50%' },
@@ -28,6 +38,9 @@ export default {
           '10%': { transform: 'scale(0.9)', opacity: 0 },
           '90%': { transform: 'scale(1)', opacity: 1 },
         },
+        'border': {
+                    to: { '--border-angle': '360deg' },
+                }
       },
       animation: {
         animate: 'animate 25s linear infinite', // Circle animation
@@ -35,6 +48,8 @@ export default {
         'wave-fast': 'wave 10s linear infinite',
         'wave-faster': 'wave 8s linear infinite',
         'scale-up': 'scale-up 0.3s ease-out',
+        'gradient-x': 'gradient-x 3s ease infinite',
+        'border': 'border 4s linear infinite',
       },
     },
     variants: {

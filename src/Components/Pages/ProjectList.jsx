@@ -1,35 +1,56 @@
 import React, { useState } from 'react';
 import { FaEye, FaGlobe, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { projects } from './projectData'; // Make sure this path is correct
+import { projects } from './projectData';   
+import Laptop from '../../assets/images/ShocaseProjects/Laptop.png';
 
 const ProjectCard = ({ project, onExpand }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 transform hover:scale-105 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] mb-8 relative">
-      <div className="relative h-48 sm:h-64 cursor-pointer" onClick={() => onExpand(project)}>
+<div 
+  className={`bg-white rounded-lg hover:border-4 hover:rounded-lg hover:border-gradient-7  shadow-md overflow-hidden transition-all duration-300 transform hover:scale-105 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] mb-8 relative 
+    [background:conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,theme(colors.indigo.500)_86%,theme(colors.indigo.300)_90%,theme(colors.indigo.500)_94%,theme(colors.slate.600/.48))_border-box] border border-transparent animate-border`}
+  style={{
+    padding: 'px', 
+    backgroundClip: 'padding-box',
+  }}
+>
+  <div 
+    className="bg-white  rounded-lg shadow-md overflow-hidden transition-all duration-300 transform hover:scale-105 w-full h-full relative"
+  >
+    <div 
+      className="relative h-0 pb-[75%] cursor-pointer bg-no-repeat bg-center bg-contain"
+      style={{ backgroundImage: `url(${Laptop})` }}
+      onClick={() => onExpand(project)}
+    >
+      <div className="absolute inset-[12%] top-[22.2%] bottom-[13%] left-[19%] overflow-hidden">
         <img
           src={project.images[0]}
           alt={project.name}
-          className="w-full h-full object-cover transition-opacity duration-300"
+          className="w-[90%] h-[82%] object-cover"
         />
       </div>
-      <div className="p-4">
-        <h3 className="text-2xl font-bold text-purple-700 mb-2">{project.name}</h3>
-        <p className="text-gray-700 mb-4 text-sm">{project.description}</p>
-        <div className="flex justify-between items-center">
-          <button 
-            className="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition-colors duration-300 flex items-center justify-center"
-            onClick={() => onExpand(project)}
-          >
-            <FaEye className="mr-2" size={16} />
-            View
-          </button>
-          <button className="border border-purple-700 text-purple-700 px-4 py-2 rounded hover:bg-purple-100 transition-colors duration-300 flex items-center justify-center">
-            <FaGlobe className="mr-2" size={16} />
-            Live
-          </button>
-        </div>
+    </div>
+    <div className="p-4">
+      <h3 className="text-2xl font-bold text-purple-700 mb-2">{project.name}</h3>
+      <p className="text-gray-700 mb-4 text-sm">{project.description}</p>
+      <div className="flex justify-between items-center">
+        <button 
+          className="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition-colors duration-300 flex items-center justify-center"
+          onClick={() => onExpand(project)}
+        >
+          <FaEye className="mr-2" size={16} />
+          View
+        </button>
+        <button className="border border-purple-700 text-purple-700 px-4 py-2 rounded hover:bg-purple-100 transition-colors duration-300 flex items-center justify-center">
+          <FaGlobe className="mr-2" size={16} />
+          Live
+        </button>
       </div>
     </div>
+  </div>
+</div>
+
+
+
   );
 };
 

@@ -102,5 +102,50 @@
 }
 
 
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
 
 
+@layer components {
+  .border-gradient-7 {
+    border-image: conic-gradient(
+      red,
+      orange,
+      yellow,
+      green,
+      cyan,
+      blue,
+      violet
+    ) 1;
+    border-width: 4px; /* Adjust the width of the border */
+  }
+
+  .hover\:border-gradient-7:hover {
+    border-image: conic-gradient(
+      red,
+      orange,
+      yellow,
+      green,
+      cyan,
+      blue,
+      violet
+    ) 1;
+  }
+
+  /* Optional: Add animations for the border if needed */
+  @keyframes border-animation {
+    0% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: transparent;
+    }
+  }
+
+  .animate-border {
+    animation: border-animation 2s infinite; /* Adjust as needed */
+  }
+}
