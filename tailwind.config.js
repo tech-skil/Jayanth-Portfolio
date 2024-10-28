@@ -7,6 +7,14 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        purple: {
+          50: '#faf5ff',
+          // ... other shades
+          700: '#6d28d9',
+          // ... etc
+        }
+      },
       keyframes: {
         'gradient-x': {
           '0%, 100%': {

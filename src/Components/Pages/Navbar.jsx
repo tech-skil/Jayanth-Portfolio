@@ -9,8 +9,8 @@ const navigation = [
   { name: 'About', path: '/home/about' },
   { name: 'Education', path: '/home/education' },
   { name: 'Skills', path: '/home/skills' },
-  { name: 'Projects', path: '/home/projects' },
-  { name: 'Contacts', path: '/home/contacts' },
+  { name: 'Projects', path: '/home/AchievementShowcase' },
+  { name: 'Contacts', path: '/home/contactform' },
 ];
 
 function classNames(...classes) {
