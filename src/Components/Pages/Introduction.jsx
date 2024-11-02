@@ -2,6 +2,8 @@ import React from "react";
 import { useRef, useEffect } from "react";
 import ProfileImage from "../../assets/images/Profile-b.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from 'react-router-dom';
+
 import {
   faTwitter,
   faInstagram,
@@ -57,12 +59,15 @@ const Introduction = () => {
           <div className="    space-x-5">
             <button className="  bg-purple-700 px-6 text-white  rounded-lg py-2 hover:bg-purple-800 hover:shadow-lg hover:shadow-purple-600/50 transition duration-300 hover:text-white border-2 hover:border-purple-700  my-10 mx-4 sm:my-4 xl:my-10  md:my-5 lg:my-6">
               {" "}
-              Hire Me
+              <Link to='/home/contactform' >Hire Me</Link>
             </button>
-            <button className="  border-purple-700 border-2  px-6 text-purple-700  rounded-lg py-1 m-2  lg:my-6    my-10 mx-4 hover:bg-purple-100 hover:shadow-lg hover:shadow-purple-600/60 transition duration-300 sm:my-4 xl:my-10 md:my-5">
-              {" "}
-              Projects
-            </button>
+            <Link 
+  to="/home/AchievementShowcase" 
+  className="border-purple-700 border-2 px-6 text-purple-700 rounded-lg py-1 m-2 lg:my-6 my-10 mx-4 hover:bg-purple-100 hover:shadow-lg hover:shadow-purple-600/60 transition duration-300 sm:my-4 xl:my-10 md:my-5"
+>
+  Projects
+</Link>
+
           </div>
           <div className="space-x-6">
             <FontAwesomeIcon

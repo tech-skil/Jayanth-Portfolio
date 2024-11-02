@@ -14,42 +14,45 @@ const Footer = () => {
           style={{ zIndex: 1 }}
         />
         
-        <div className="relative z-20 h-auto py-12 bg-gradient-to-r from-[#9900EF] to-[#90d4ff]">
-          <div className="container mx-auto px-4 text-white">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center">Let's build from here!</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="relative z-20 h-auto py-12 bg-gradient-to-r  from-[#9900EF] to-[#90d4ff]">
+          <div className="container mx-auto px-4 text-white  flex flex-col sm:flex-row sm:justify-evenly">
+            <div className='flex items-center'>
+
+            <h1 className="text-3xl sm:text-2 xl font-bold mb-8 text-center  ">Let's build from here!</h1>
+            </div>
+            <div className="grid sm:space-x-8 grid-cols-1  sm:ml-4 sm:grid-cols-3 lg:grid-cols-3 gap">
               <div>
                 <h2 className="font-bold text-xl mb-4">Projects</h2>
-                <ul className="space-y-2">
-                  <li>Tsukiwa</li>
-                  <li>Realpop</li>
-                  <li>Student Portal App</li>
-                  <li>Apes Together Str...</li>
-                  <li>Interactive Chatb...</li>
-                  <li>Sassy CSS</li>
-                  <li>Kamote School Ad...</li>
+                <ul className="space-y-2 ">
+                    <li className='sm:hover:underline  cursor-pointer'>Tsukiwa</li>
+                    <li className='sm:hover:underline  cursor-pointer'>Realpop</li>
+                    <li className='sm:hover:underline  cursor-pointer'>Student Portal App</li>
+                    <li className='sm:hover:underline  cursor-pointer'>Apes Together Str...</li>
+                    <li className='sm:hover:underline  cursor-pointer'>Interactive Chatb...</li>
+                    <li className='sm:hover:underline  cursor-pointer'>Sassy CSS</li>
+                    <li className='sm:hover:underline  cursor-pointer'>Kamote School Ad...</li>
                 </ul>
               </div>
               <div>
                 <h2 className="font-bold text-xl mb-4">Connect</h2>
                 <ul className="space-y-2">
-                  <li>AniList</li>
-                  <li>Facebook</li>
-                  <li>Instagram</li>
-                  <li>GitHub</li>
-                  <li>Twitter X</li>
-                  <li>Reddit</li>
-                  <li>YouTube</li>
+                  <li className='sm:hover:underline  cursor-pointer'>AniList</li>
+                  <li className='sm:hover:underline  cursor-pointer'>Facebook</li>
+                  <li className='sm:hover:underline  cursor-pointer'>Instagram</li>
+                  <li className='sm:hover:underline  cursor-pointer'>GitHub</li>
+                  <li className='sm:hover:underline  cursor-pointer'>Twitter X</li>
+                  <li className='sm:hover:underline  cursor-pointer'>Reddit</li>
+                  <li className='sm:hover:underline  cursor-pointer'>YouTube</li>
                 </ul>
               </div>
               <div>
                 <h2 className="font-bold text-xl mb-4">Navigate</h2>
                 <ul className="space-y-2">
-                  <li>Home</li>
-                  <li>About</li>
-                  <li>Projects</li>
-                  <li>Timeline</li>
-                  <li>More</li>
+                  <li className='sm:hover:underline  cursor-pointer'>Home</li>
+                  <li className='sm:hover:underline  cursor-pointer'>About</li>
+                  <li className='sm:hover:underline  cursor-pointer'>Projects</li>
+                  <li className='sm:hover:underline  cursor-pointer'>Timeline</li>
+                  <li className='sm:hover:underline  cursor-pointer'>More</li>
                 </ul>
               </div>
             </div>

@@ -11,8 +11,10 @@ import AchievementShowcase from './Components/Pages/AchievementShowcase';
 import ContactForm from './Components/Pages/ContactForm';
 
 const App = () => {
+  console.log();
   return (
     <>
+
       <BrowserRouter>
         <Routes>
           <Route index element={<Welcome />} />

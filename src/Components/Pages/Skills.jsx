@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Tool from "./ProfessionalDashboard/Tools";
 const Skills = () => {
   return (
     <div>
-      Skills
+      <Tool/  >
     </div>
   )
 }

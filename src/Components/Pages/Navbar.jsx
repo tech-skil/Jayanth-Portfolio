@@ -6,10 +6,10 @@ import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
 const navigation = [
-  { name: 'About', path: '/home/about' },
+  { name: 'Home', path: '/home' },
   { name: 'Education', path: '/home/education' },
   { name: 'Skills', path: '/home/skills' },
-  { name: 'Projects', path: '/home/AchievementShowcase' },
+  { name: 'Experience', path: '/home/AchievementShowcase' },
   { name: 'Contacts', path: '/home/contactform' },
 ];
 

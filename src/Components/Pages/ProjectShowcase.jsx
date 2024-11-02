@@ -165,10 +165,9 @@ const ProjectShowcase = () => {
       </div>
       <div className="mt-8 text-center sm:text-right">
         <Link 
-          to="/home/projects" 
-          className="inline-block bg-purple-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base hover:bg-purple-800 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-        >
-          See More Projects
+          to="/home/AchievementShowcase" 
+          className="inline-block font-medium  text-purple-700 border-b-4 border-purple-800  py-2  rounded-xs text-sm sm:text-base hover:text-purple-800 hover:font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+        >See More Projects &rarr;
         </Link>
       </div>
 
