@@ -10,7 +10,7 @@ const Footer = () => {
         <img
           src={waveSvg}
           alt="wave"
-          className="w-full lg:-mb-40 md:-mb-20 -mb-10 -z-10 h-auto"
+          className="w-full lg:-mb-28 md:-mb-20 -mb-10 -z-10 h-auto"
           style={{ zIndex: 1 }}
         />
         
@@ -60,17 +60,8 @@ const Footer = () => {
         </div>
         <div
           className="relative bg-purple-950 py-6 px-4 text-white text-center"
-          style={{ zIndex: 2 }}
-        >
+          style={{ zIndex: 2 }}>
           <p className="text-sm">&copy; {currentYear} Jayanth Banglore.</p>
-          {/* <div className="flex justify-center space-x-4 mt-4">
-            {['facebook', 'instagram', 'github', 'twitter', 'reddit', 'youtube'].map((social) => (
-              <a key={social} href={`#${social}`} className="hover:opacity-75">
-                <span className="sr-only">{social}</span>
-                <div className="w-6 h-6 bg-white rounded-full"></div>
-              </a>
-            ))}
-          </div> */}
         </div>
       </footer>
     </div>

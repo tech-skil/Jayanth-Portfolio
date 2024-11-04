@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import ach1 from "../../assets/images/bg.jpg"
+import ach1 from "../../assets/images/bg.jpg";
+import stay_on_focused from "../../assets/images/Stay_On_Focus.jpg";
+
 // import { div } from 'framer-motion/client';
 
 
@@ -51,9 +53,19 @@ const AchievementCarousel = () => {
   };
 
   return (
-    <div className='container flex justify-center  mx-auto -mt-[29rem]'>
+<div>
+<div className="relative container mx-auto w-full  min-h-[30rem] sm:min-h-[30rem] md:min-h-[40rem] lg:min-h-[50rem] md:h-32 overflow-hidden md:-top-[2rem] -top-[11rem] sm:-mt-[0rem] sm:-top-[6rem] mt-44 ">
+    <div className="absolute w-full h-[80vh] md:h-full top-0 left-0">
+      <img
+        src={stay_on_focused}
+        alt="stay on focused"
+        className="w-full h-full object-fill sm:object-contain opacity-60 md:object-contain lg:object-cover"
+      />
+    </div>
+  </div>
 
-    <div className="w-full max-w-[90%] -mb-[5rem]  px-8 py-8 text-sm">
+<div className='container flex justify-center mx-auto -mt-[29rem] md:-mt-[29rem] sm:-mt-[24rem]'>
+<div className="w-full max-w-[90%] -mb-[5rem] px-4 md:px-8 py-8 text-sm"> 
       <div className="relative ">
         {/* Navigation Buttons */}
         <button 
@@ -127,6 +139,9 @@ const AchievementCarousel = () => {
     </div>
 
     </div>
+
+</div>
+
   );
 };
 

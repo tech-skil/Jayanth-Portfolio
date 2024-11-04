@@ -8,6 +8,7 @@ import Footer from './Components/Pages/Footer';
 import Education from './Components/Pages/ProfessionalDashboard/Education';
 import Skills from './Components/Pages/Skills';
 import AchievementShowcase from './Components/Pages/AchievementShowcase';
+// import AchievementCarousel from './Components/Pages/AchievementCarousel';
 import ContactForm from './Components/Pages/ContactForm';
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
               <>
                 <Navbar />
                 <ProjectList />
+
                 <Footer />
               </>
             }
@@ -45,6 +47,7 @@ const App = () => {
               <>
                 <Navbar />
                 <ContactForm/>
+
                 <Footer />
               </>
             }
@@ -55,6 +58,7 @@ const App = () => {
               <>
                 <Navbar />
                 <Skills />
+
                 <Footer />
               </>
             }
