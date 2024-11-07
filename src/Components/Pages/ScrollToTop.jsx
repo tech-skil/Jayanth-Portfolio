@@ -56,9 +56,9 @@ const ScrollToTop = () => {
           className="fixed bottom-8 right-8 transition-all duration-500 transform hover:-translate-y-2 z-50 group"
           aria-label="Scroll to top"
         >
-          <div className="w-14 h-14 bg-purple-600 rounded-2xl shadow-lg flex items-center justify-center hover:bg-purple-700 transition-colors duration-300">
+          <div className="w-10 h-10 bg-purple-600 rounded-2xl shadow-lg flex items-center justify-center hover:bg-purple-700 transition-colors duration-300">
           {/* <FontAwesomeIcon icon={faHandPointer} beat size="2x" /> */}
-          <FontAwesomeIcon icon={faHandPointer} beat size="2x" className='text-white' />
+          <FontAwesomeIcon icon={faHandPointer} beat size="x" className='text-white ' />
           </div>
           {/* Optional floating animation */}
           <div className="absolute inset-0 rounded-2xl bg-purple-400 opacity-20 animate-pulse -z-10"></div>

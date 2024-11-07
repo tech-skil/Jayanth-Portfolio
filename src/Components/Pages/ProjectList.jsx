@@ -1,10 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { FaEye, FaGlobe, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { projects } from './projectData';   
 import Laptop from '../../assets/images/ShocaseProjects/Laptop.png';
-
+import Loader from '../../assets/images/loader.gif';
 const ProjectCard = ({ project, onExpand }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Function to check if all images have loaded
+    const areAllImagesLoaded = () => {
+      const images = document.images;
+      for (let i = 0; i < images.length; i++) {
+        if (!images[i].complete) {
+          return false;
+        }
+      }
+      return true;
+    };
+
+    // Set the loading state based on whether all images have loaded
+    const interval = setInterval(() => {
+      if (areAllImagesLoaded()) {
+        setIsLoading(false);
+        clearInterval(interval);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
+    <>{isLoading ? (
+      <div className='flex justify-center items-center h-screen'>
+      <img src={Loader} alt="Loading..." /> 
+      </div>
+    ) : (
 <div 
   className={`bg-white rounded-lg hover:border-[16%] hover:border-gradient-7 hover:rounded-md shadow-md overflow-hidden transition-all duration-300 transform hover:scale-105 w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] mb-8 relative 
     [background:conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,theme(colors.indigo.500)_86%,theme(colors.indigo.300)_90%,theme(colors.indigo.500)_94%,theme(colors.slate.600/.48))_border-box] border border-transparent animate-border`}
@@ -48,6 +77,8 @@ const ProjectCard = ({ project, onExpand }) => {
     </div>
   </div>
 </div>
+)}
+</>
 
 
 

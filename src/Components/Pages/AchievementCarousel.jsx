@@ -64,7 +64,7 @@ const AchievementCarousel = () => {
     </div>
   </div>
 
-<div className='container flex justify-center mx-auto -mt-[29rem] md:-mt-[29rem] sm:-mt-[24rem]'>
+<div className='container flex hidden md:block justify-center mx-auto -mt-[29rem] md:-mt-[29rem] sm:-mt-[24rem]'>
 <div className="w-full max-w-[90%] -mb-[5rem] px-4 md:px-8 py-8 text-sm"> 
       <div className="relative ">
         {/* Navigation Buttons */}
@@ -87,9 +87,9 @@ const AchievementCarousel = () => {
         </button>
 
         {/* Cards Container */}
-        <div className="overflow-hidden mx-8 max-h-48 ">
+        <div className="overflow-hidden hidden md:block mx-8 max-h-48 ">
           <div 
-            className="flex gap-6 transition-transform duration-300 ease-in-out"
+            className="flex  gap-6 transition-transform duration-300 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)` }}
           >
             {achievements.map((achievement) => (
