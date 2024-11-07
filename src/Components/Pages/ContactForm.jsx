@@ -58,9 +58,7 @@ const ContactForm = () => {
   };
 
   return (  
-    <div className="container mx-auto    ">
-
-
+    <div className="container mx-auto">
     <div className="max-w-[90%] container mx-auto pt-2 mb-[10rem]">
       <div className="text-center  mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-purple-800 mb-4">

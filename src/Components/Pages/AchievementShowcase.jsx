@@ -5,6 +5,7 @@ import Resume from './ProfessionalDashboard/Resume';
 import Cirtification from './ProfessionalDashboard/Cirtification';
 import RepositoriesGrid from './ProfessionalDashboard/RepositoriesGrid';
 import Tools from './ProfessionalDashboard/Tools';
+import Accomplishments from './ProfessionalDashboard/Accomplishments';
 import Navbar from './Navbar';
 
 import { 
@@ -94,10 +95,10 @@ const AchievementShowcase = () => {
       ),
       activeColor: 'text-red-600',
       hoverBg: 'hover:bg-red-50',
-      content: 'Competitions content goes here'
+      content: 'hello world'
     },
     { 
-      name: 'Research Papers', 
+      name: 'Accomplishments', 
       icon: (
         <IconWrapper bgColor="bg-indigo-100">
           <FaBookReader className="w-6 h-6 text-indigo-600" />
@@ -105,7 +106,7 @@ const AchievementShowcase = () => {
       ),
       activeColor: 'text-indigo-600',
       hoverBg: 'hover:bg-indigo-50',
-      content: 'Research Papers content goes here'
+      content: <Accomplishments/>
     }
   ];
 
