@@ -14,30 +14,37 @@ import Loader from './assets/images/loader.gif';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
-    // Function to check if all images have loaded
-    const areAllImagesLoaded = () => {
+    // Function to check if all images and videos have loaded
+    const areAllMediaLoaded = () => {
       const images = document.images;
       for (let i = 0; i < images.length; i++) {
         if (!images[i].complete) {
           return false;
         }
       }
+  
+      const videos = document.getElementsByTagName('video');
+      for (let i = 0; i < videos.length; i++) {
+        if (videos[i].readyState < 4) { // readyState 4 means the video is fully loaded
+          return false;
+        }
+      }
+  
       return true;
     };
-
-    // Set the loading state based on whether all images have loaded
+  
+    // Set the loading state based on whether all images and videos have loaded
     const interval = setInterval(() => {
-      if (areAllImagesLoaded()) {
+      if (areAllMediaLoaded()) {
         setIsLoading(false);
         clearInterval(interval);
       }
     }, 100);
-
+  
     return () => clearInterval(interval);
   }, []);
-
+  
   return (
     <>
       {isLoading ? (
