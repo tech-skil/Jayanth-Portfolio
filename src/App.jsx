@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Added useState and useEffect
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Welcome from "./Components/Welcome";
 import Home from "./Components/Home";
@@ -14,6 +14,7 @@ import Loader from './assets/images/loader.gif';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     // Function to check if all images and videos have loaded
     const areAllMediaLoaded = () => {
@@ -46,61 +47,59 @@ const App = () => {
   }, []);
   
   return (
-    <>
+    <BrowserRouter>
       {isLoading ? (
         <div className='flex justify-center items-center h-screen'>
-        <img src={Loader} alt="Loading..." /> 
+          <img src={Loader} alt="Loading..." /> 
         </div>
       ) : (
-        <BrowserRouter>
-          <Routes>
-            <Route index element={<Welcome />} />
-            <Route path="home" element={<Home />} />
-            <Route
-              path="/home/projects"
-              element={
-                <>
-                  <Navbar />
-                  <ProjectList />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/home/education"
-              element={
-                <>
-                  <Navbar />
-                  <Education />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/home/contactform"
-              element={
-                <>
-                  <Navbar />
-                  <ContactForm />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/home/skills"
-              element={
-                <>
-                  <Navbar />
-                  <Skills />
-                  <Footer />
-                </>
-              }
-            />
-            <Route path="/home/achievementshowcase" element={<AchievementShowcase />} />
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route index element={<Welcome />} />
+          <Route path="home" element={<Home />} />
+          <Route
+            path="/home/projects"
+            element={
+              <>
+                <Navbar />
+                <ProjectList />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/home/education"
+            element={
+              <>
+                <Navbar />
+                <Education />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/home/contactform"
+            element={
+              <>
+                <Navbar />
+                <ContactForm />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/home/skills"
+            element={
+              <>
+                <Navbar />
+                <Skills />
+                <Footer />
+              </>
+            }
+          />
+          <Route path="/home/achievementshowcase" element={<AchievementShowcase />} />
+        </Routes>
       )}
-    </>
+    </BrowserRouter>
   );
 }
 
