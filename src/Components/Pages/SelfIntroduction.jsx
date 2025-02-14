@@ -28,7 +28,7 @@ const SelfIntroduction = () => {
                   backgroundImage: `url(${selfIntro})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  opacity:0.85,
+                  opacity: 0.85,
                   // filter: 'blur(2px)',
                   zIndex: -1,
                 }}
@@ -38,7 +38,7 @@ const SelfIntroduction = () => {
                     {/* Outer border */}
                     <div className="absolute lg:-left-24 xl:-left-48 sm:-left-8 md:-left-16 top-8 md:w-[68%] xl:w-[75%] sm:w-[50%] sm:h-[75%]  md:h-full border-[8px] border-cyan-500 rounded-lg" />
                     {/* Image container */}
-                    <div className="relative lg:-left-16 xl:-left-40 md:-left-8 sm:w-[50%] sm:h-[75%]  md:w-[68%] xl:w-[75%]  md:h-full overflow-hidden rounded-lg border-2 border-cyan-500">
+                    <div className="relative lg:-left-16 xl:-left-40 md:-left-8 sm:w-[50%] sm:h-[75%] md:w-[68%] xl:w-[75%] md:h-full overflow-hidden rounded-lg border-2 border-cyan-500 transition-all duration-300 ease-in-out filter grayscale hover:shadow-none hover:filter hover:grayscale-0">
                       <img
                         src={img}
                         alt="Profile"

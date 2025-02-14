@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from './Pages/Navbar';
-import Introduction from './Pages/Introduction';
-import Footer from './Pages/Footer';
-import TechStackComponent from './Pages/TechStackComponent';
-import ProjectShowcase from './Pages/ProjectShowcase';
-import Self_Introduction from './Pages/SelfIntroduction';
-import AchievementCarousel from './Pages/AchievementCarousel';
-import CustomLineedCursor from './cuesorAnimation/MultiLlineRibbonsCursor';
-import ScrollToTop from './Pages/ScrollToTop';
-import Loader from './Pages/Loding'; // Add the Loader component
+import React, { useState, useEffect } from "react";
+import Navbar from "./Pages/Navbar";
+import Introduction from "./Pages/Introduction";
+import Footer from "./Pages/Footer";
+import TechStackComponent from "./Pages/TechStackComponent";
+import ProjectShowcase from "./Pages/ProjectShowcase";
+import Self_Introduction from "./Pages/SelfIntroduction";
+import AchievementCarousel from "./Pages/AchievementCarousel";
+import CustomLineedCursor from "./cuesorAnimation/MultiLlineRibbonsCursor";
+import ScrollToTop from "./Pages/ScrollToTop";
+import Loader from "./Pages/Loding"; // Add the Loader component
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
