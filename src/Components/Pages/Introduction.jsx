@@ -2,7 +2,7 @@ import React from "react";
 import { useRef, useEffect } from "react";
 import ProfileImage from "../../assets/images/Profile-b.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import {
   faTwitter,
@@ -12,9 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import BackgroundAnimation from "../Animation/BackgroundAnimation";
 
-
 const Introduction = () => {
-
   const dissectionRef = useRef(null);
   useEffect(() => {
     const dissection = dissectionRef.current;
@@ -23,21 +21,23 @@ const Introduction = () => {
     }
   }, []);
   const backgroundImage = ProfileImage;
-  
+
   return (
     <div>
-            <div
+      <div
         className=" container mx-auto flex flex-col-reverse sm:flex-row sm:flex  sm:justify-evenly sm:drop-shadow-lg   transition duration-300 transform translate-y-full"
         ref={dissectionRef}
-        >
+      >
         <BackgroundAnimation />
         <div className=" text-stone-950  space-y-4 sm:space-y-1 md:space-5-1 lg:space-y-4  lg:mt-0 lg:p-24  p-8  sm:mt-5 md:mt-10  w-full  md:w-max md:pl-14  pr-8 font-sans  ">
           <p className="  text-3xl  font-bold text-wrap:wrap; / sm:text-lg lg:text-xl xl:text-2xl">
             Hello It's me{" "}
           </p>
-          
-          <h1 className=" text-5xl font-black text-wrap: wrap; / sm:text-2xl lg:text-3xl xl:text-4xl">Jayanth B R</h1>
-          
+
+          <h1 className=" text-5xl font-black text-wrap: wrap; / sm:text-2xl lg:text-3xl xl:text-4xl">
+            Jayanth B R
+          </h1>
+
           <h2 className="text-3xl font-bold  / sm:text-lg lg:text-4xl xl:text-5xl">
             {" "}
             <span className="italic text-purple-700 font-bold">
@@ -48,7 +48,7 @@ const Introduction = () => {
           <h3 className=" mt-3 text-2xl font-bold text-wrap: wrap; / sm:text-lg lg:text-xl xl:text-2xl">
             And Front-end to{" "}
             <span className="italic text-purple-700 font-bold">
-              Full-stack: Leveling up my dev skills! 
+              Full-stack: Leveling up my dev skills!
             </span>
           </h3>
           <p className=" flex-wrap max-lg: max-w-xl pt-2 mt-2  sm:text-sm  lg:text-base xl:text-lg">
@@ -59,21 +59,20 @@ const Introduction = () => {
           <div className="    space-x-5">
             <button className="  bg-purple-700 px-6 text-white  rounded-lg py-2 hover:bg-purple-800 hover:shadow-lg hover:shadow-purple-600/50 transition duration-300 hover:text-white border-2 hover:border-purple-700  my-10 mx-4 sm:my-4 xl:my-10  md:my-5 lg:my-6">
               {" "}
-              <Link to='/home/contactform' >Hire Me</Link>
+              <Link to="/home/contactform">Hire Me</Link>
             </button>
-            <Link 
-  to="/home/AchievementShowcase" 
-  className="border-purple-700 border-2 px-6 text-purple-700 rounded-lg py-1 m-2 lg:my-6 my-10 mx-4 hover:bg-purple-100 hover:shadow-lg hover:shadow-purple-600/60 transition duration-300 sm:my-4 xl:my-10 md:my-5"
->
-  Projects
-</Link>
-
+            <Link
+              to="/home/AchievementShowcase"
+              className="border-purple-700 border-2 px-6 text-purple-700 rounded-lg py-1 m-2 lg:my-6 my-10 mx-4 hover:bg-purple-100 hover:shadow-lg hover:shadow-purple-600/60 transition duration-300 sm:my-4 xl:my-10 md:my-5"
+            >
+              Projects
+            </Link>
           </div>
           <div className="space-x-6">
             <FontAwesomeIcon
               icon={faGithub}
               className="text-purple-600  border-purple-700 border-2 p-1 rounded-full hover:text-purple-600 cursor-pointer   hover:shadow-lg hover:shadow-purple-600/50 "
-            /> 
+            />
 
             <FontAwesomeIcon
               icon={faLinkedin}
@@ -122,7 +121,7 @@ const Introduction = () => {
       </div>
       <hr />
     </div>
-  )
-}
+  );
+};
 
-export default Introduction
+export default Introduction;
