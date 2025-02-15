@@ -83,7 +83,7 @@ const EducationCard = ({ education, index, onVisible }) => {
         style={{ top: 0, bottom: 0 }}
       />
 
-      <div className="w-8 h-8 bg-purple-700 rounded-full z-50 flex items-center justify-center absolute -left-5">
+      <div className="w-8 h-8 bg-purple-700 rounded-full z-20 flex items-center justify-center absolute -left-5">
         <span className="text-white text-sm font-bold">
           {educationData.length - index}
         </span>
@@ -93,7 +93,7 @@ const EducationCard = ({ education, index, onVisible }) => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -50 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="bg-gray-100 p-6 rounded-lg shadow-lg w-full text-start relative"
+        className="bg-gray-100 p-6 rounded-lg shadow-lg w-full  text-start relative"
       >
         <h2 className="text-xl font-bold text-purple-600">
           {education.degree}
@@ -161,7 +161,7 @@ const ImagePopup = ({ images, onClose }) => {
               key={currentIndex}
               src={images[currentIndex]}
               alt={`Education environment ${currentIndex + 1}`}
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg "
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
@@ -211,7 +211,7 @@ const Education = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-purple-200 text-gray-800 p-8 flex justify-center items-center">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50 text-gray-800 p-8 flex justify-center items-center">
       <div className="relative max-w-3xl w-full">
         <h1 className="text-4xl font-bold mb-12 text-center text-purple-600">
           Educational Journey
