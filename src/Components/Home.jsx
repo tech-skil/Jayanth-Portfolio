@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import Navbar from "./Pages/Navbar";
 import Introduction from "./Pages/Introduction";
 import Footer from "./Pages/Footer";
@@ -8,13 +9,13 @@ import Self_Introduction from "./Pages/SelfIntroduction";
 import AchievementCarousel from "./Pages/AchievementCarousel";
 import CustomLineedCursor from "./cuesorAnimation/MultiLlineRibbonsCursor";
 import ScrollToTop from "./Pages/ScrollToTop";
-import Loader from "./Pages/Loding"; // Add the Loader component
+import Loader from "./Pages/Loding";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const { theme } = useTheme();
 
   useEffect(() => {
-    // Function to check if all images have loaded
     const areAllImagesLoaded = () => {
       const images = document.images;
       for (let i = 0; i < images.length; i++) {
@@ -25,7 +26,6 @@ const Home = () => {
       return true;
     };
 
-    // Set the loading state based on whether all images have loaded
     const interval = setInterval(() => {
       if (areAllImagesLoaded()) {
         setIsLoading(false);
@@ -37,7 +37,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div
+      className={`min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300`}
+    >
       <CustomLineedCursor
         zIndex={10000}
         debug={false}
@@ -46,22 +48,26 @@ const Home = () => {
         size={50}
         dampening={0.25}
         tension={0.98}
-        backgroundColor="rgb(8,5,16)"
+        backgroundColor={theme === "dark" ? "rgb(17,24,39)" : "rgb(8,5,16)"}
+        className="!z-[9999]"
       />
       {isLoading ? (
-        <Loader /> // Display the Loader component if isLoading is true
+        <div className="flex justify-center items-center min-h-screen bg-white dark:bg-gray-900">
+          <Loader />
+        </div>
       ) : (
-        // Render the rest of the components when isLoading is false
-        <>
+        <div className="flex flex-col min-h-screen transition-colors duration-300 ">
           <Navbar />
-          <Introduction />
-          <Self_Introduction />
-          <TechStackComponent />
-          <ProjectShowcase />
-          <AchievementCarousel />
+          <main className="flex-grow">
+            <Introduction />
+            <Self_Introduction />
+            <TechStackComponent />
+            <ProjectShowcase />
+            <AchievementCarousel />
+          </main>
           <Footer />
           <ScrollToTop />
-        </>
+        </div>
       )}
     </div>
   );

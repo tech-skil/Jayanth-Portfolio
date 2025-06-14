@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { X, Image as ImageIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const educationData = [
   {
@@ -66,6 +67,7 @@ const EducationCard = ({ education, index, onVisible }) => {
   const [showImages, setShowImages] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (isInView) {
@@ -79,11 +81,11 @@ const EducationCard = ({ education, index, onVisible }) => {
         initial={{ height: 0 }}
         animate={{ height: isInView ? "100%" : 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="absolute left-0 w-1 bg-purple-500"
+        className="absolute left-0 w-1 bg-purple-500 dark:bg-purple-400"
         style={{ top: 0, bottom: 0 }}
       />
 
-      <div className="w-8 h-8 bg-purple-700 rounded-full z-20 flex items-center justify-center absolute -left-5">
+      <div className="w-8 h-8 bg-purple-700 dark:bg-purple-600 rounded-full z-20 flex items-center justify-center absolute -left-5 transition-colors duration-300">
         <span className="text-white text-sm font-bold">
           {educationData.length - index}
         </span>
@@ -93,18 +95,24 @@ const EducationCard = ({ education, index, onVisible }) => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -50 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="bg-gray-100 p-6 rounded-lg shadow-lg w-full  text-start relative"
+        className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg w-full text-start relative transition-colors duration-300"
       >
-        <h2 className="text-xl font-bold text-purple-600">
+        <h2 className="text-xl font-bold text-purple-600 dark:text-purple-400 transition-colors duration-300">
           {education.degree}
         </h2>
-        <h3 className="text-lg text-gray-700">{education.institution}</h3>
-        <p className="text-purple-500 font-medium">{education.year}</p>
-        <p className="text-gray-600">{education.description}</p>
+        <h3 className="text-lg text-gray-700 dark:text-gray-200 transition-colors duration-300">
+          {education.institution}
+        </h3>
+        <p className="text-purple-500 dark:text-purple-400 font-medium transition-colors duration-300">
+          {education.year}
+        </p>
+        <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">
+          {education.description}
+        </p>
 
         <button
           onClick={() => setShowImages(true)}
-          className="absolute bottom-4 right-4 text-purple-600 hover:text-purple-800 transition-colors"
+          className="absolute bottom-4 right-4 text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors duration-300"
         >
           <ImageIcon size={24} />
         </button>
@@ -124,6 +132,7 @@ const EducationCard = ({ education, index, onVisible }) => {
 
 const ImagePopup = ({ images, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { theme } = useTheme();
 
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -145,12 +154,12 @@ const ImagePopup = ({ images, onClose }) => {
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
-        className="relative max-w-5xl w-full aspect-video bg-gray-200 rounded-lg"
+        className="relative max-w-5xl w-full aspect-video bg-gray-200 dark:bg-gray-800 rounded-lg transition-colors duration-300"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute -right-4 -top-4 z-50 bg-gray-200 text-gray-600 hover:text-gray-800 p-2 rounded-full shadow-lg"
+          className="absolute -right-4 -top-4 z-50 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-200 hover:text-gray-800 dark:hover:text-white p-2 rounded-full shadow-lg transition-colors duration-300"
         >
           <X size={24} />
         </button>
@@ -161,7 +170,7 @@ const ImagePopup = ({ images, onClose }) => {
               key={currentIndex}
               src={images[currentIndex]}
               alt={`Education environment ${currentIndex + 1}`}
-              className="w-full h-full object-cover rounded-lg "
+              className="w-full h-full object-cover rounded-lg"
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
@@ -174,7 +183,7 @@ const ImagePopup = ({ images, onClose }) => {
               e.stopPropagation();
               prevImage();
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-200/90 hover:bg-gray-300/90 text-gray-800 p-3 rounded-full transition-colors shadow-lg"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-200/90 dark:bg-gray-700/90 hover:bg-gray-300/90 dark:hover:bg-gray-600/90 text-gray-800 dark:text-gray-200 p-3 rounded-full transition-colors duration-300 shadow-lg"
             aria-label="Previous image"
           >
             <ChevronLeft size={24} />
@@ -185,13 +194,13 @@ const ImagePopup = ({ images, onClose }) => {
               e.stopPropagation();
               nextImage();
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-200/90 hover:bg-gray-300/90 text-gray-800 p-3 rounded-full transition-colors shadow-lg"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-200/90 dark:bg-gray-700/90 hover:bg-gray-300/90 dark:hover:bg-gray-600/90 text-gray-800 dark:text-gray-200 p-3 rounded-full transition-colors duration-300 shadow-lg"
             aria-label="Next image"
           >
             <ChevronRight size={24} />
           </button>
 
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-200/90 text-gray-800 px-4 py-2 rounded-full text-sm shadow-lg">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-200/90 dark:bg-gray-700/90 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm shadow-lg transition-colors duration-300">
             {currentIndex + 1} / {images.length}
           </div>
         </div>
@@ -202,7 +211,7 @@ const ImagePopup = ({ images, onClose }) => {
 
 const Education = () => {
   const [visibleSections, setVisibleSections] = useState([]);
-  const cardRef = useRef(null);
+  const { theme } = useTheme();
 
   const handleVisible = (index) => {
     setVisibleSections((prev) =>
@@ -211,9 +220,9 @@ const Education = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50 text-gray-800 p-8 flex justify-center items-center">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50 dark:from-gray-900 dark:to-gray-900 text-gray-800 dark:text-white p-8 flex justify-center items-center transition-colors duration-300">
       <div className="relative max-w-3xl w-full">
-        <h1 className="text-4xl font-bold mb-12 text-center text-purple-600">
+        <h1 className="text-4xl font-bold mb-12 text-center text-purple-600 dark:text-purple-400 transition-colors duration-300">
           Educational Journey
         </h1>
 
@@ -223,7 +232,7 @@ const Education = () => {
             height: `${(visibleSections.length / educationData.length) * 100}%`,
           }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="absolute -left-1 w-2 bg-purple-600 top-0 bottom-0"
+          className="absolute -left-1 w-2 bg-purple-600 dark:bg-purple-400 top-0 bottom-0 transition-colors duration-300"
         />
 
         <div className="space-y-16 relative">

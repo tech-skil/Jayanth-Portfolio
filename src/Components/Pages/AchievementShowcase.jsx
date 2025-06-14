@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X, Award, Sun, Moon, BookOpen } from "lucide-react";
+import { useTheme } from "next-themes";
 import ProjectList from "./ProjectList";
 import Resume from "./ProfessionalDashboard/Resume";
 import Cirtification from "./ProfessionalDashboard/Cirtification";
@@ -22,7 +23,7 @@ import {
 const AchievementShowcase = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("My Creative Showcase");
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const IconWrapper = ({ children, bgColor }) => (
     <div
@@ -122,7 +123,6 @@ const AchievementShowcase = () => {
   ];
 
   const toggleSidebar = () => setIsOpen(!isOpen);
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
   const renderContent = () => {
     const item = menuItems.find((item) => item.name === activeSection);
@@ -137,23 +137,17 @@ const AchievementShowcase = () => {
   };
 
   return (
-    <div className="lg:mx-auto bg-white lg:container min-h-screen flex flex-col">
+    <div className="lg:mx-auto lg:container min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-300">
       <Navbar />
 
-      <div
-        className={`flex-1  flex ${
-          isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
-        }`}
-      >
+      <div className="flex-1 flex">
         {/* Sidebar for desktop */}
-        <aside
-          className={`hidden md:flex flex-col w-64 p-4 ${
-            isDarkMode ? "bg-gray-800" : "bg-gray-100"
-          } sticky top-0 h-screen`}
-        >
+        <aside className="hidden md:flex flex-col w-64 p-4 bg-gray-100 dark:bg-gray-800 transition-colors duration-300 sticky top-0 h-screen">
           <div className="flex items-center mb-8">
-            <Award className="w-8 h-8 mr-2 text-purple-700" />
-            <h1 className="text-xl font-bold">Certifications</h1>
+            <Award className="w-8 h-8 mr-2 text-purple-700 dark:text-purple-400" />
+            <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+              Certifications
+            </h1>
           </div>
           <nav className="flex-1">
             <ul>
@@ -164,12 +158,8 @@ const AchievementShowcase = () => {
                     className={`flex items-center w-full p-2 rounded ${
                       activeSection === item.name
                         ? "bg-purple-700 text-white"
-                        : `hover:bg-purple-100 ${
-                            isDarkMode
-                              ? "text-white hover:text-gray-900"
-                              : "text-gray-900"
-                          }`
-                    }`}
+                        : "hover:bg-purple-100 dark:hover:bg-purple-800 text-gray-900 dark:text-white"
+                    } transition-colors duration-300`}
                   >
                     <span className="mr-2">{item.icon}</span>
                     {item.name}
@@ -178,26 +168,22 @@ const AchievementShowcase = () => {
               ))}
             </ul>
           </nav>
-          <button
-            onClick={toggleDarkMode}
-            className="mt-auto flex items-center p-2 rounded hover:bg-purple-100"
+          {/* <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="mt-auto flex items-center p-2 rounded hover:bg-purple-100 dark:hover:bg-purple-800 transition-colors duration-300"
           >
-            {isDarkMode ? (
+            {theme === "dark" ? (
               <Sun className="w-5 h-5 mr-2" />
             ) : (
               <Moon className="w-5 h-5 mr-2" />
             )}
-            {isDarkMode ? "Light Mode" : "Dark Mode"}
-          </button>
+            {theme === "dark" ? "Light Mode" : "Dark Mode"}
+          </button> */}
         </aside>
 
         {/* Main content */}
-        <main
-          className={`flex-1 p-8 ${
-            isDarkMode ? "bg-gray-900" : "bg-white"
-          } min-h-full`}
-        >
-          <h2 className="text-3xl font-bold mb-6 text-purple-700">
+        <main className="flex-1 p-8 bg-white dark:bg-gray-900 min-h-full transition-colors duration-300">
+          <h2 className="text-3xl font-bold mb-6 text-purple-700 dark:text-purple-400">
             {activeSection}
           </h2>
           {renderContent()}
@@ -217,28 +203,18 @@ const AchievementShowcase = () => {
               onClick={toggleSidebar}
             >
               <div
-                className={`absolute bottom-16 right-4 ${
-                  isDarkMode ? "bg-gray-800" : "bg-white"
-                } rounded-2xl shadow-xl p-4 transform transition-transform duration-200`}
+                className="absolute bottom-16 right-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 transform transition-transform duration-200"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="grid grid-cols-3 gap-3">
-                  {menuItems.map((item, index) => (
+                  {menuItems.map((item) => (
                     <button
                       key={item.name}
                       onClick={() => {
                         setActiveSection(item.name);
                         setIsOpen(false);
                       }}
-                      className={`
-                        flex flex-col items-center justify-center p-3 rounded-xl
-                        ${
-                          isDarkMode
-                            ? "text-white hover:bg-gray-700"
-                            : "text-purple-700 hover:bg-purple-100"
-                        }
-                        transition-colors duration-200
-                      `}
+                      className="flex flex-col items-center justify-center p-3 rounded-xl text-purple-700 dark:text-purple-400 hover:bg-purple-100 dark:hover:bg-purple-800 transition-colors duration-200"
                     >
                       {item.icon}
                       <span className="text-xs mt-1 text-center">
@@ -247,18 +223,12 @@ const AchievementShowcase = () => {
                     </button>
                   ))}
                   <button
-                    onClick={toggleDarkMode}
-                    className={`
-                      flex flex-col items-center justify-center p-3 rounded-xl
-                      ${
-                        isDarkMode
-                          ? "text-white hover:bg-gray-700"
-                          : "text-purple-700 hover:bg-purple-100"
-                      }
-                      transition-colors duration-200
-                    `}
+                    onClick={() =>
+                      setTheme(theme === "dark" ? "light" : "dark")
+                    }
+                    className="flex flex-col items-center justify-center p-3 rounded-xl text-purple-700 dark:text-purple-400 hover:bg-purple-100 dark:hover:bg-purple-800 transition-colors duration-200"
                   >
-                    {isDarkMode ? (
+                    {theme === "dark" ? (
                       <>
                         <Sun className="w-6 h-6" />
                         <span className="text-xs mt-1">Light</span>

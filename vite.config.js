@@ -1,13 +1,18 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { qrcode } from 'vite-plugin-qrcode';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
+import { qrcode } from "vite-plugin-qrcode";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  // plugins: [react(),qrcode()],
-  plugins: [react()],
+  plugins: [react(), qrcode()],
   server: {
-    host: "0.0.0.0",  // Allows access from network devices
+    host: "0.0.0.0",
     port: 3000,
-  }
-})
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  
+});

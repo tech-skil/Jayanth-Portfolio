@@ -5,12 +5,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="footer  relative container mx-auto sm:drop-shadow-lg flex justify-center h-full w-full">
-      <footer className="mb-0 lg:max-w-[110rem] 2xl:max-w-[170rem] xl:max-w-[100rem] w-full">
+    <div className="footer  relative container mx-auto sm:drop-shadow-lg flex justify-center h-full w-full dark:bg-gray-900  ">
+      <footer className="mb-0 lg:max-w-[110rem] 2xl:max-w-[170rem] xl:max-w-[100rem] w-full ">
         <img
           src={waveSvg}
           alt="wave"
-          className="w-full lg:-mb-28 md:-mb-20 -mb-10 -z-10 h-auto"
+          className="w-full lg:-mb-28 md:-mb-20 -mb-10 -z-10 h-auto dark:bg-transparent"
           style={{ zIndex: 1 }}
         />
 

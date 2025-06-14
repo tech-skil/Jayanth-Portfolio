@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Welcome from "./Components/Welcome";
 import Home from "./Components/Home";
 import ProjectList from "./Components/Pages/ProjectList";
-import Navbar from './Components/Pages/Navbar';
-import Footer from './Components/Pages/Footer';
-import Education from './Components/Pages/ProfessionalDashboard/Education';
-import Skills from './Components/Pages/Skills';
-import AchievementShowcase from './Components/Pages/AchievementShowcase';
+import Navbar from "./Components/Pages/Navbar";
+import Footer from "./Components/Pages/Footer";
+import Education from "./Components/Pages/ProfessionalDashboard/Education";
+import Skills from "./Components/Pages/Skills";
+import AchievementShowcase from "./Components/Pages/AchievementShowcase";
 // import AchievementCarousel from './Components/Pages/AchievementCarousel';
-import ContactForm from './Components/Pages/ContactForm';
-import Loader from './assets/images/loader.gif';
+import ContactForm from "./Components/Pages/ContactForm";
+import Loader from "./assets/images/loader.gif";
+import { ThemeProvider } from "./Components/theme-provider";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,17 +25,18 @@ const App = () => {
           return false;
         }
       }
-  
-      const videos = document.getElementsByTagName('video');
+
+      const videos = document.getElementsByTagName("video");
       for (let i = 0; i < videos.length; i++) {
-        if (videos[i].readyState < 4) { // readyState 4 means the video is fully loaded
+        if (videos[i].readyState < 4) {
+          // readyState 4 means the video is fully loaded
           return false;
         }
       }
-  
+
       return true;
     };
-  
+
     // Set the loading state based on whether all images and videos have loaded
     const interval = setInterval(() => {
       if (areAllMediaLoaded()) {
@@ -42,65 +44,70 @@ const App = () => {
         clearInterval(interval);
       }
     }, 100);
-  
+
     return () => clearInterval(interval);
   }, []);
-  
+
   return (
-    <BrowserRouter>
-      {isLoading ? (
-        <div className='flex justify-center items-center h-screen'>
-          <img src={Loader} alt="Loading..." /> 
-        </div>
-      ) : (
-        <Routes>
-          <Route index element={<Welcome />} />
-          <Route path="home" element={<Home />} />
-          <Route
-            path="/home/projects"
-            element={
-              <>
-                <Navbar />
-                <ProjectList />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/home/education"
-            element={
-              <>
-                <Navbar />
-                <Education />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/home/contactform"
-            element={
-              <>
-                <Navbar />
-                <ContactForm />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/home/skills"
-            element={
-              <>
-                <Navbar />
-                <Skills />
-                <Footer />
-              </>
-            }
-          />
-          <Route path="/home/achievementshowcase" element={<AchievementShowcase />} />
-        </Routes>
-      )}
-    </BrowserRouter>
+    <ThemeProvider defaultTheme="light" attribute="class">
+      <BrowserRouter>
+        {isLoading ? (
+          <div className="flex justify-center items-center h-screen dark:bg-gray-900 ">
+            <img src={Loader} alt="Loading..." />
+          </div>
+        ) : (
+          <Routes>
+            <Route index element={<Welcome />} />
+            <Route path="home" element={<Home />} />
+            <Route
+              path="/home/projects"
+              element={
+                <>
+                  <Navbar />
+                  <ProjectList />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/home/education"
+              element={
+                <>
+                  <Navbar />
+                  <Education />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/home/contactform"
+              element={
+                <>
+                  <Navbar />
+                  <ContactForm />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/home/skills"
+              element={
+                <>
+                  <Navbar />
+                  <Skills />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/home/achievementshowcase"
+              element={<AchievementShowcase />}
+            />
+          </Routes>
+        )}
+      </BrowserRouter>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
