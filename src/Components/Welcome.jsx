@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import bgVideo from "../assets/Video/Welcom page.mp4";
 import bgImage from "../assets/images/bg.jpg";
-import '../index.css';
+import "../index.css";
 import { Link } from "react-router-dom";
 
 const Welcome = () => {
@@ -46,7 +46,7 @@ const Welcome = () => {
             </h1>
             <button className="relative cursor-pointer inline-flex pacifico-regular items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
               <span className="relative  px-3 py-1 transition-all ease-in duration-75 bg-white dark:bg-gray-800 rounded-md group-hover:bg-opacity-0 sm:text-xl md:text-2xl lg:text-3xl">
-              <Link to="home">View</Link>
+                <Link to="home">View</Link>
               </span>
             </button>
           </div>

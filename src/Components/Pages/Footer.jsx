@@ -5,7 +5,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="footer  relative container mx-auto sm:drop-shadow-lg flex justify-center h-full w-full dark:bg-gray-900  ">
+    <div className="footer  relative container mx-auto sm:drop-shadow-lg flex justify-center h-full w-full dark:bg-transparent ">
       <footer className="mb-0 lg:max-w-[110rem] 2xl:max-w-[170rem] xl:max-w-[100rem] w-full ">
         <img
           src={waveSvg}

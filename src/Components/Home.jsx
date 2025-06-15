@@ -14,6 +14,16 @@ import Loader from "./Pages/Loding";
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { theme } = useTheme();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const areAllImagesLoaded = () => {
@@ -38,21 +48,21 @@ const Home = () => {
 
   return (
     <div
-      className={`min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300`}
+      className={`min-h-screen bg-white dark:bg-[#0c1624] transition-colors duration-300`}
     >
       <CustomLineedCursor
         zIndex={10000}
         debug={false}
         friction={0.5}
         trails={20}
-        size={50}
+        size={isMobile ? 8 : 50}
         dampening={0.25}
         tension={0.98}
         backgroundColor={theme === "dark" ? "rgb(17,24,39)" : "rgb(8,5,16)"}
         className="!z-[9999]"
       />
       {isLoading ? (
-        <div className="flex justify-center items-center min-h-screen bg-white dark:bg-gray-900">
+        <div className="flex justify-center items-center min-h-screen bg-white dark:bg-[#0c1624]">
           <Loader />
         </div>
       ) : (

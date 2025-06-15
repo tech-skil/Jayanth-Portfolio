@@ -26,7 +26,7 @@ const techStack = [
     name: "GitHub",
     icon: FaGithub,
     color: "#181717",
-    darkColor: "#ffffff", // Add dark mode color
+    darkColor: "#ffffff", 
   },
   { name: "Node.js", icon: FaNodeJs, color: "#339933" },
   { name: "React", icon: FaReact, color: "#61DAFB" },
@@ -38,7 +38,7 @@ const TechStackComponent = () => {
 
   return (
     <>
-      <div className="w-full p-8 sm:p-8 md:p-14 m-0 lg:p-24 xl:p-24 overflow-hidden container mx-auto">
+      <div className="w-full p-8 sm:p-8 md:p-14 m-0 lg:p-24 xl:p-24 overflow-hidden container mx-auto bg-slate-100 dark:bg-[#0c1624] transition-colors duration-300">
         <h2 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-purple-700 dark:text-purple-400 mb-2 sm:mb-4 transition-colors duration-300">
           Tech Stack
         </h2>

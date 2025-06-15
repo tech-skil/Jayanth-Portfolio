@@ -1,10 +1,23 @@
 {
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/assets/*", "/static/*"]
+    "exclude": [
+      "/assets/*",
+      "/static/*",
+      "/*.{png,jpg,gif,svg,js,css,ico}",
+      "/manifest.json"
+    ]
   },
   "mimeTypes": {
     ".js": "application/javascript",
-    ".css": "text/css"
-  }
+    ".css": "text/css",
+    ".html": "text/html"
+  },
+  "routes": [
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ]
 }

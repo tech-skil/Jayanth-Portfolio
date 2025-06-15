@@ -220,7 +220,7 @@ const Education = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50 dark:from-gray-900 dark:to-gray-900 text-gray-800 dark:text-white p-8 flex justify-center items-center transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50 dark:from-[#0c1624] dark:to-[#0c1624] text-gray-800 dark:text-white p-8 flex justify-center items-center transition-colors duration-300">
       <div className="relative max-w-3xl w-full">
         <h1 className="text-4xl font-bold mb-12 text-center text-purple-600 dark:text-purple-400 transition-colors duration-300">
           Educational Journey

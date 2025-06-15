@@ -5,6 +5,10 @@ import { qrcode } from "vite-plugin-qrcode";
 
 export default defineConfig({
   plugins: [react(), qrcode()],
+  base: "/",
+  build: {
+    outDir: "dist",
+  },
   server: {
     host: "0.0.0.0",
     port: 3000,
@@ -14,5 +18,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  
 });

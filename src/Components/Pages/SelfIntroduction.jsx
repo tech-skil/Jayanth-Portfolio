@@ -20,7 +20,7 @@ const SelfIntroduction = () => {
 
   return (
     <>
-      <div className="hidden sm:block md:max-h-screen sm:max-h-screen lg:min-h-0 w-full bg-transparent dark:bg-gray-900 p-8 pb-16 transition-colors duration-300">
+      <div className="hidden sm:block md:max-h-screen sm:max-h-screen lg:min-h-0 w-full bg-transparent dark:bg-[#0c1624] p-8 pb-16 transition-colors duration-300">
         <div className="relative max-w-7xl mx-auto">
           {/* Desktop Layout (lg) */}
           <div className="relative">

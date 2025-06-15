@@ -116,7 +116,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="container mx-auto bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="container mx-auto bg-white dark:bg-[#0c1624] transition-colors duration-300">
       <div className="max-w-[90%] container mx-auto pt-2 mb-[10rem]">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-purple-800 dark:text-purple-400 mb-4 transition-colors duration-300">

@@ -198,18 +198,19 @@
   }
 
   :root[class~="dark"] {
-    @apply bg-gray-900;
+    @apply bg-[#0c1624];
   }
 
   body {
-    @apply bg-white dark:bg-gray-900 transition-colors duration-300;
+    @apply bg-white dark:bg-[#0c1624] transition-colors duration-300;
   }
 }
 
-/* Add these styles to your index.css
 body {
-  cursor: none; /* Hide the default cursor */
-/* } */
+  /* cursor: none; */
+  
+} 
+/* Add these styles to your index.css
 
 /* a,
 button,

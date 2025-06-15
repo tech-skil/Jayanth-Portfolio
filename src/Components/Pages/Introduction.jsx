@@ -1,5 +1,4 @@
-import React from "react";
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import ProfileImage from "../../assets/images/Profile-b.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
@@ -17,6 +16,17 @@ import BackgroundAnimation from "../Animation/BackgroundAnimation";
 const Introduction = () => {
   const { theme } = useTheme();
   const dissectionRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     const dissection = dissectionRef.current;
     if (dissection) {
@@ -28,7 +38,7 @@ const Introduction = () => {
   return (
     <div className="relative">
       {" "}
-      <div className="relative bg-slate-100 z-10 dark:bg-gray-900 transition-colors duration-300">
+      <div className="relative bg-slate-100 z-10 dark:bg-[#0c1624] transition-colors duration-300">
         <div
           className="container mx-auto flex flex-col-reverse sm:flex-row sm:flex sm:justify-evenly sm:drop-shadow-lg transition duration-300 transform translate-y-full relative z-20" // Add relative and z-20
           ref={dissectionRef}
@@ -38,7 +48,7 @@ const Introduction = () => {
             debug={false}
             friction={0.5}
             trails={20}
-            size={50}
+            size={isMobile ? 8 : 50}
             dampening={0.25}
             tension={0.98}
             backgroundColor="rgb(8,5,16)"

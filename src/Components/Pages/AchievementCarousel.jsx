@@ -56,7 +56,7 @@ const AchievementCarousel = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="bg-white dark:bg-[#0c1624] transition-colors duration-300">
       <div className="relative container mx-auto w-full min-h-[30rem] sm:min-h-[30rem] md:min-h-[40rem] lg:min-h-[50rem] md:h-32 overflow-hidden md:-top-[2rem] -top-[13rem] sm:-mt-[0rem] sm:-top-[6rem] mt-36">
         <div className="absolute w-full h-[80vh] md:h-full top-24 md:top-0 left-0">
           <img

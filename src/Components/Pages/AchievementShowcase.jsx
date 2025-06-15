@@ -182,7 +182,7 @@ const AchievementShowcase = () => {
         </aside>
 
         {/* Main content */}
-        <main className="flex-1 p-8 bg-white dark:bg-gray-900 min-h-full transition-colors duration-300">
+        <main className="flex-1 p-8 bg-white dark:bg-[#0c1624] min-h-full transition-colors duration-300">
           <h2 className="text-3xl font-bold mb-6 text-purple-700 dark:text-purple-400">
             {activeSection}
           </h2>

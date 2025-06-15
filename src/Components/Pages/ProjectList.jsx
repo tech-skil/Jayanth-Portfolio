@@ -122,7 +122,7 @@ const ProjectList = () => {
   };
 
   return (
-    <div className="container mx-auto py-8 sm:py-12 px-4 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="container mx-auto py-8 sm:py-12 px-4 bg-white dark:bg-[#0c1624] transition-colors duration-300">
       <h2 className="text-2xl sm:text-3xl font-bold text-purple-700 dark:text-purple-400 mb-6 sm:mb-8 text-center transition-colors duration-300">
         All Projects
       </h2>
